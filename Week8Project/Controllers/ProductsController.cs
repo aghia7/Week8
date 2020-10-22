@@ -29,8 +29,7 @@ namespace Week8Project.API.Controllers
         {
             var products = await _productRepository.GetAllAsync();
             var productsToReturn = _mapper.Map<IEnumerable<ProductDto>>(products);
-            return products != null 
-                ? (IActionResult) Ok(productsToReturn) : NoContent();
+            return products != null ? (IActionResult) Ok(productsToReturn) : NoContent();
         }
 
         [HttpGet("{id}")]
