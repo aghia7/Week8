@@ -62,7 +62,7 @@ namespace Week8Project.API.Controllers
             return Ok(product.Id);
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(Guid id)
         {
             var product = await _productRepository.GetByIdAsync(id);

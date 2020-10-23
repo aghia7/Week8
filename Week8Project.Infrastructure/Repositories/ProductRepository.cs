@@ -15,13 +15,13 @@ namespace Week8Project.Infrastructure.Repositories
 
         public ProductRepository(DataContext dbContext) : base(dbContext)
         {
-            _products = dbContext.Set<Product>();
+            _products = dbContext.Products; // or dbContext.Set<Product>()
         }
 
         public async Task<Product> GetProductWithMinimumPrice()
         {
-            var max = await _products.MinAsync(p => p.Price);
-            return await _products.FirstOrDefaultAsync(p => p.Price == max);
+            var min = await _products.MinAsync(p => p.Price);
+            return await _products.FirstOrDefaultAsync(p => p.Price == min);
         }
     }
 }
