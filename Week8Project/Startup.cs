@@ -57,7 +57,7 @@ namespace Week8Project
 
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseFileServer();
 
